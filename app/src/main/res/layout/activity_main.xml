@@ -20,8 +20,6 @@
         android:textSize="15sp"
         android:text="CANTIDAD" />
 
-
-
     <TextView
         android:id="@+id/cantidadnum"
         android:layout_width="wrap_content"
@@ -39,7 +37,7 @@
             android:layout_below="@id/cantidad"
             android:layout_marginTop="0dp"
             android:layout_toRightOf="@id/cantidadnum"
-            android:text="-"
+            android:text="+"
             android:layout_marginLeft="15dp"
             android:textSize="15sp" />
         <Button
@@ -48,7 +46,7 @@
             android:layout_height="45dp"
             android:layout_below="@id/cantidad"
             android:layout_marginTop="0dp"
-            android:text="+"
+            android:text="-"
             android:layout_marginRight="10dp"
             android:textSize="15sp" />
     <TextView

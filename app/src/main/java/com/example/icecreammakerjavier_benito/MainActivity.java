@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         cantidadnum = findViewById(R.id.cantidadnum);
         precionum = findViewById(R.id.precionum);
-        mas = (Button)findViewById(R.id.mas);
-        menos = (Button)findViewById(R.id.menos);
+        mas = (Button)findViewById(R.id.menos);
+        menos = (Button)findViewById(R.id.mas);
         mas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
