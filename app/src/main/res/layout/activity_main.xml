@@ -10,7 +10,9 @@
     android:textColor="@color/darkgrey"
     tools:context=".MainActivity">
 
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:id="@+id/cantidad"
         android:layout_width="wrap_content"
@@ -18,34 +20,43 @@
         android:textSize="15sp"
         android:text="CANTIDAD" />
 
-    <Button
-        android:id="@+id/mas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:onClick="onClickButtonMas"
-        android:text="+" />
+
 
     <TextView
         android:id="@+id/cantidadnum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
+        android:layout_toRightOf="@id/mas"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/cantidad"
         android:text="0" />
 
-    <Button
-        android:id="@+id/menos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:onClick="onClickButtonMenos"
-        android:text="-" />
-
+        <Button
+            android:id="@+id/menos"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_below="@id/cantidad"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/cantidadnum"
+            android:text="-"
+            android:layout_marginLeft="15dp"
+            android:textSize="15sp" />
+        <Button
+            android:id="@+id/mas"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_below="@id/cantidad"
+            android:layout_marginTop="0dp"
+            android:text="+"
+            android:layout_marginRight="10dp"
+            android:textSize="15sp" />
     <TextView
         android:id="@+id/precio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
+        android:layout_below="@id/menos"
         android:text="PRECIO" />
 
     <TextView
@@ -53,6 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
+        android:layout_below="@+id/precio"
         android:text="€0" />
 
     <Button
@@ -62,5 +74,7 @@
         android:textSize="15sp"
         android:textColor="@color/darkgrey"
         android:onClick="onClickButtonOrder"
+        android:layout_below="@+id/precionum"
         android:text="Hacer Pedido" />
+    </RelativeLayout>
 </LinearLayout>

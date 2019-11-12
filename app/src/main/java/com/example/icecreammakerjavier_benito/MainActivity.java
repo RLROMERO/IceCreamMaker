@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -24,34 +25,36 @@ public class MainActivity extends AppCompatActivity {
         precionum = findViewById(R.id.precionum);
         mas = (Button)findViewById(R.id.mas);
         menos = (Button)findViewById(R.id.menos);
-
         mas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (cantidadvar < 10) {
                 cantidadvar++;
-                cantidadnum.setText(String.valueOf(cantidadvar));
-                precio();
+                cantidadnum.setText(String.valueOf(cantidadvar));} else {
+                    Toast mayor = Toast.makeText(getApplicationContext(),"No puedes comprar mas de 10 helados", Toast.LENGTH_SHORT);
+                    mayor.show();
+                }
             }});
+
         menos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (cantidadvar > 0) {
                 cantidadvar--;
-                cantidadnum.setText(String.valueOf(cantidadvar));
-                precio();
+                cantidadnum.setText(String.valueOf(cantidadvar));} else {
+                    Toast menor = Toast.makeText(getApplicationContext(),"No puedes comprar helados negativos", Toast.LENGTH_SHORT);
+                menor.show();
+                }
             }});
 
     }
     public void onClickButtonOrder(View view) {
-        displayAndCalculatePriceInformation("3", "6");
+        precio();
     }
 
-    public void displayAndCalculatePriceInformation (String cantidad,String precio) {
-        cantidadnum.setText(cantidad);
-        precionum.setText(precio);
-    }
     public void precio () {
         preciovar = cantidadvar * 3;
-        precionum.setText(preciovar+"");
+        precionum.setText(preciovar+"€");
     }
 }
 
