@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button menos;
     private int preciovar = 0;
     private int cantidadvar = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (cantidadvar < 10) {
                 cantidadvar++;
-                cantidadnum.setText(String.valueOf(cantidadvar));} else {
+                cantidadnum.setText(String.valueOf(cantidadvar));
+                    precio();} else {
                     Toast mayor = Toast.makeText(getApplicationContext(),"No puedes comprar mas de 10 helados", Toast.LENGTH_SHORT);
                     mayor.show();
                 }
@@ -41,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (cantidadvar > 0) {
                 cantidadvar--;
-                cantidadnum.setText(String.valueOf(cantidadvar));} else {
+                cantidadnum.setText(String.valueOf(cantidadvar));
+                precio();
+                ;} else {
                     Toast menor = Toast.makeText(getApplicationContext(),"No puedes comprar helados negativos", Toast.LENGTH_SHORT);
                 menor.show();
                 }
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void onClickButtonOrder(View view) {
-        precio();
+        Toast.makeText(getApplicationContext(),"Pedido Realizado", Toast.LENGTH_SHORT).show();
     }
 
     public void precio () {
